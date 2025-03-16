@@ -1,18 +1,32 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const MeetMyTeam = () => {
-  const [teamMembers, setTeamMembers] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/team")
-      .then((response) => setTeamMembers(response.data))
-      .catch((error) => console.error("Error fetching team data:", error));
-  }, []);
+  const [teamMembers] = useState([
+    {
+      _id: "1",
+      name: "Rashmi Ranjan",
+      role: "Software Engineer",
+      description: "An expert in full-stack development with a passion for clean and efficient code.",
+      imageUrl: "/images/rashmi.jpg",
+    },
+    {
+      _id: "2",
+      name: "Jyoti Ranjan",
+      role: "UI/UX Designer",
+      description: "Brings creative designs to life with an eye for detail and user experience.",
+      imageUrl: "/images/jyoti.jpg",
+    },
+    {
+      _id: "3",
+      name: "Shakti Sankar",
+      role: "Project Manager",
+      description: "Leads projects with a focus on delivering high-quality and timely results.",
+      imageUrl: "/images/shakti.jpg",
+    },
+  ]);
 
   // Slider settings
   const sliderSettings = {
@@ -22,24 +36,20 @@ const MeetMyTeam = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000, // Set to 4000ms (4 seconds)
+    autoplaySpeed: 4000,
     arrows: false,
   };
 
   return (
     <div className="min-h-screen text-white flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-10">
-        {/* Left Section - Title & Quote */}
         <div className="md:w-1/2 text-left">
           <h2 className="text-5xl font-bold mb-4">Meet My Team</h2>
           <p className="text-lg italic text-gray-300">
-            "Our team is a group of highly skilled professionals, each an expert
-            in their field. Together, we combine years of experience and passion
-            for innovation to achieve excellence in every project we undertake."
+            "Our team is a group of highly skilled professionals, each an expert in their field. Together, we combine years of experience and passion for innovation to achieve excellence in every project we undertake."
           </p>
         </div>
 
-        {/* Right Section - Slider */}
         <div className="md:w-1/2 bg-white bg-opacity-10 p-8 rounded-xl shadow-xl border border-purple-500 backdrop-blur-md">
           <Slider {...sliderSettings}>
             {teamMembers.map((member) => (
