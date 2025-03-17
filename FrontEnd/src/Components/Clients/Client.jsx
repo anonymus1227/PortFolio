@@ -5,24 +5,32 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// import {priya} from "../../../public/images/priya_verma";
+
 const testimonials = [
   {
-    name: "John Doe",
-    position: "CEO, TechCorp",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
-    feedback: "BhabaniShankar's work exceeded our expectations. The UI/UX was flawless!",
+    name: "Amit Sharma",
+    position: "CTO, CodeNexus",
+    image: "/images/client/amit_sharma.jpg",
+    feedback: "BhabaniShankar transformed our outdated system into a sleek, modern platform. The UX improvements were game-changing!",
   },
   {
-    name: "Sarah Smith",
-    position: "Product Manager, WebStudio",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
-    feedback: "The responsiveness and animations made our website look premium!",
+    name: "Priya Verma",
+    position: "CEO, DigitalWave",
+    image: "/images/client/priya_verma.webp",
+    feedback: "An absolute pleasure to work with! The attention to detail and creativity in design truly set BhabaniShankar apart.",
   },
   {
-    name: "Michael Johnson",
-    position: "Founder, StartupX",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-    feedback: "Professional, detail-oriented, and delivers top-notch results.",
+    name: "Rahul Mehta",
+    position: "Founder, TechCraft",
+    image: "/images/client/rahul_meheta.png",
+    feedback: "Exceeded our expectations! The animations and responsiveness made our web app feel premium and super engaging.",
+  },
+  {
+    name: "Sonia Patel",
+    position: "Product Lead, InnovateX",
+    image: "/images/client/sonia_patel.jpg",
+    feedback: "Working with BhabaniShankar was a breeze. The project was delivered ahead of schedule with outstanding results.",
   },
 ];
 
@@ -34,7 +42,7 @@ export default function ClientStories() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000, 
+    autoplaySpeed: 5000,
   };
 
   return (
@@ -48,8 +56,7 @@ export default function ClientStories() {
         >
           <h2 className="text-5xl font-bold text-purple-400">Client Stories</h2>
           <p className="text-gray-300 mt-4">
-            Here’s what our clients say about working with **BhabaniShankar**. I strive to deliver
-            premium quality and innovative solutions that leave a lasting impact.
+            Here’s what my clients say about working with me. I strive to deliver premium quality and innovative solutions that leave a lasting impact.
           </p>
         </motion.div>
 
@@ -76,7 +83,7 @@ export default function ClientStories() {
                     <img
                       src={client.image}
                       alt={client.name}
-                      className="w-full h-full object-cover border-2 border-purple-400"
+                      className="w-full h-full object-cover border-2 border-purple-400 rounded-full"
                     />
                   </div>
                 </div>

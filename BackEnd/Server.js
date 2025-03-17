@@ -5,8 +5,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const contactRoutes = require("./Routes/ContactRoutes");
-const projectRoutes = require("./Routes/ProjectRoutes");
-const teamRoutes = require("./Routes/TeamRoutes");
 
 const app = express();
 app.use(cors());
@@ -21,9 +19,6 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Routes
 app.use("/api/contact", contactRoutes);
-app.use("/api/projects", projectRoutes);
-app.use("/api/team", teamRoutes);
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
